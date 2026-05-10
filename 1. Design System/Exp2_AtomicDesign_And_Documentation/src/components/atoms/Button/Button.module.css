@@ -1,0 +1,142 @@
+/* ============================================================
+   📁 src/components/atoms/Button/Button.module.css
+   ============================================================
+   نستخدم CSS Variables المعرّفة في tokens.css
+   هكذا الـ Button مرتبط بالـ Design System ولا يحتوي
+   على أي قيم "مرمّزة" (hardcoded) بشكل مباشر.
+============================================================ */
+
+/* ── Base Styles (مشتركة بين كل الـ variants) ─────────────── */
+.btn {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  gap:             var(--space-2);          /* من tokens */
+  font-family:     var(--font-sans);
+  font-weight:     var(--font-semibold);
+  line-height:     1;
+  border:          2px solid transparent;
+  border-radius:   var(--radius-lg);
+  cursor:          pointer;
+  white-space:     nowrap;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-fast),
+    border-color     var(--transition-fast),
+    color            var(--transition-fast),
+    box-shadow       var(--transition-fast),
+    transform        var(--transition-fast);
+
+  /* منع تحديد النص */
+  user-select: none;
+}
+
+.btn:focus-visible {
+  outline:        2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor:  not-allowed;
+}
+
+/* ── Size Variants ──────────────────────────────────────────── */
+.btn--sm {
+  padding:   var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.btn--md {
+  padding:   var(--space-3) var(--space-5);
+  font-size: var(--text-base);
+}
+
+.btn--lg {
+  padding:   var(--space-4) var(--space-8);
+  font-size: var(--text-lg);
+}
+
+/* ── Visual Variants ────────────────────────────────────────── */
+
+/* Primary - الزر الرئيسي الأكثر بروزًا */
+.btn--primary {
+  background-color: var(--color-primary-500);
+  color:            var(--color-neutral-0);
+  border-color:     var(--color-primary-500);
+}
+.btn--primary:hover:not(:disabled) {
+  background-color: var(--color-primary-600);
+  border-color:     var(--color-primary-600);
+  box-shadow:       var(--shadow-md);
+}
+
+/* Secondary - ثانوي مع حدود */
+.btn--secondary {
+  background-color: var(--color-neutral-0);
+  color:            var(--color-primary-600);
+  border-color:     var(--color-primary-500);
+}
+.btn--secondary:hover:not(:disabled) {
+  background-color: var(--color-primary-50);
+  box-shadow:       var(--shadow-sm);
+}
+
+/* Ghost - شفاف بدون حدود */
+.btn--ghost {
+  background-color: transparent;
+  color:            var(--color-neutral-700);
+  border-color:     transparent;
+}
+.btn--ghost:hover:not(:disabled) {
+  background-color: var(--color-neutral-100);
+}
+
+/* Danger - للإجراءات الخطيرة (حذف، تحذير) */
+.btn--danger {
+  background-color: var(--color-error);
+  color:            var(--color-neutral-0);
+  border-color:     var(--color-error);
+}
+.btn--danger:hover:not(:disabled) {
+  background-color: var(--color-error-dark);
+  border-color:     var(--color-error-dark);
+  box-shadow:       var(--shadow-md);
+}
+
+/* ── Full Width ─────────────────────────────────────────────── */
+.btn--full {
+  width: 100%;
+}
+
+/* ── Loading State ──────────────────────────────────────────── */
+.btn--loading {
+  cursor: wait;
+}
+
+/* Spinner Animation */
+.spinner {
+  display:       inline-block;
+  width:         1em;
+  height:        1em;
+  border:        2px solid currentColor;
+  border-top:    2px solid transparent;
+  border-radius: 50%;
+  animation:     spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Icon Wrapper ───────────────────────────────────────────── */
+.icon {
+  display:     inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size:   1.1em;
+}

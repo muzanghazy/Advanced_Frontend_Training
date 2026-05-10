@@ -1,0 +1,18 @@
+.header {
+  border-bottom: 1px solid #eee;
+  padding: 16px 32px;
+}
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  gap: 8px;
+  font-weight: bold;
+}
+.nav {
+  display: flex;
+  gap: 16px;
+}

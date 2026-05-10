@@ -1,0 +1,320 @@
+/* ── App Shell ───────────────────────────────────────────── */
+.app {
+  min-height: 100vh;
+  background: #0f172a;
+  color: var(--color-neutral-200);
+  font-family: var(--font-primary);
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.logo-icon {
+  color: var(--color-primary-500);
+  font-size: 1.3rem;
+}
+
+.header-nav {
+  display: flex;
+  gap: var(--space-5);
+  flex: 1;
+}
+
+.header-nav a {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-neutral-400);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.header-nav a:hover {
+  color: white;
+}
+
+/* ── Main ────────────────────────────────────────────────── */
+.app-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--space-6) var(--space-16);
+}
+
+/* ── Hero ────────────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: var(--space-16) 0 var(--space-12);
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 0%,
+    rgba(59, 130, 246, 0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-primary-500);
+  margin-bottom: var(--space-3);
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  color: white;
+  line-height: 1.15;
+  margin-bottom: var(--space-4);
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--color-neutral-400);
+  max-width: 520px;
+  margin: 0 auto var(--space-8);
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Sections ────────────────────────────────────────────── */
+.section {
+  margin-top: var(--space-16);
+  scroll-margin-top: 80px;
+}
+
+.section--tight {
+  margin-top: var(--space-8);
+}
+
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-primary-500);
+  margin-bottom: var(--space-2);
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: var(--space-2);
+}
+
+.section-desc {
+  font-size: 0.9rem;
+  color: var(--color-neutral-500);
+  line-height: 1.7;
+  margin-bottom: var(--space-6);
+  max-width: 600px;
+}
+
+.section-desc code {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  color: var(--color-primary-400);
+  background: rgba(59, 130, 246, 0.1);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+/* ── Token Swatches ─────────────────────────────────────── */
+.token-section {
+  margin-bottom: var(--space-6);
+}
+
+.token-group-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-neutral-500);
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.05em;
+}
+
+.swatches {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.swatches--semantic {
+  gap: var(--space-3);
+}
+
+.swatch {
+  flex: 0 0 auto;
+}
+
+.swatch-color {
+  width: 56px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  margin-bottom: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.swatch--semantic .swatch-color {
+  width: 80px;
+  height: 56px;
+}
+
+.swatch-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--color-neutral-400);
+  font-family: var(--font-mono);
+}
+
+.swatch-hex {
+  font-size: 0.6rem;
+  color: var(--color-neutral-600);
+  font-family: var(--font-mono);
+}
+
+/* ── Demo Cards ──────────────────────────────────────────── */
+.demo-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5) var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+.demo-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-neutral-600);
+  margin-bottom: var(--space-4);
+}
+
+.demo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.demo-row--center {
+  align-items: center;
+}
+
+.demo-hint {
+  font-size: 0.75rem;
+  color: var(--color-neutral-600);
+  margin-top: var(--space-3);
+}
+
+/* ── UserCard Grid ───────────────────────────────────────── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-4);
+}
+
+/* ── Callout ─────────────────────────────────────────────── */
+.section--callout {
+  margin-top: var(--space-16);
+}
+
+.callout {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  background: rgba(59, 130, 246, 0.07);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5) var(--space-6);
+}
+
+.callout-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.callout-title {
+  font-weight: 700;
+  color: white;
+  margin-bottom: var(--space-2);
+}
+
+.callout-desc {
+  font-size: 0.85rem;
+  color: var(--color-neutral-400);
+  line-height: 1.8;
+}
+
+.callout-desc code {
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  color: var(--color-primary-400);
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.app-footer {
+  text-align: center;
+  padding: var(--space-6);
+  font-size: 0.8rem;
+  color: var(--color-neutral-700);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.app-footer code {
+  font-family: var(--font-mono);
+  color: var(--color-primary-500);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .header-nav {
+    display: none;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

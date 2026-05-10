@@ -1,0 +1,23 @@
+@import "./tokens/index.css";
+
+.button {
+  padding: var(--space-sm) var(--space-lg);
+
+  background: var(--color-secondary);
+
+  color: var(--white);
+
+  border-radius: var(--radius-md);
+
+  font-size: var(--font-size-md);
+
+  border: none;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.button:hover {
+  background: var(--color-secondary-hover);
+}

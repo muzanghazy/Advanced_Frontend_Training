@@ -1,0 +1,67 @@
+:root {
+  /* Primitive Colors */
+  --blue-100: #dbeafe;
+  --blue-300: #93c5fd;
+  --blue-500: #3b82f6;
+  --blue-700: #1d4ed8;
+
+  --green-100: #d1fae5;
+  --green-300: #6ee7b7;
+  --green-500: #10b981;
+  --green-700: #059669;
+
+  --gray-100: #f3f4f6;
+  --gray-300: #d1d5db;
+  --gray-500: #6b7280;
+  --gray-900: #111827;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  /* Semantic Colors */
+  --color-primary: var(--blue-500);
+  --color-primary-hover: var(--blue-700);
+
+  --color-secondary: var(--green-500);
+  --color-secondary-hover: var(--green-700);
+
+  --color-text: var(--gray-900);
+  --color-text-muted: var(--gray-500);
+
+  --color-surface: var(--white);
+  --color-border: var(--gray-300);
+}
+
+[data-theme="dark"] {
+  /* Override Primitive Colors for Dark Theme */
+  --blue-100: #1e40af;
+  --blue-300: #2563eb;
+  --blue-500: #3b82f6;
+  --blue-700: #60a5fa;
+
+  --green-100: #064e3b;
+  --green-300: #047857;
+  --green-500: #10b981;
+  --green-700: #34d399;
+
+  --gray-100: #111827;
+  --gray-300: #374151;
+  --gray-500: #9ca3af;
+  --gray-900: #f3f4f6;
+
+  --white: #000000;
+  --black: #ffffff;
+
+  /* Semantic Colors remain the same, as they reference the primitive colors */
+  --color-primary: var(--blue-500);
+  --color-primary-hover: var(--blue-700);
+
+  --color-secondary: var(--green-500);
+  --color-secondary-hover: var(--green-700);
+
+  --color-text: var(--gray-900);
+  --color-text-muted: var(--gray-500);
+
+  --color-surface: var(--white);
+  --color-border: var(--gray-300);
+}
